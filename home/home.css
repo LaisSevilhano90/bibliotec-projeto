@@ -1,451 +1,254 @@
-
-/* CABEÇALHO */
-
 a {
     color: var(--branco);
-    text-decoration: none; /* tira o sublinhado do link */
+    text-decoration: none;
 }
-
 .cabecalho {
     background-color: var(--azul-escuro);
-
     display: flex;
-    /* flex-direction: row; */
-
-    /* alinha no sentido do flex */
     justify-content: space-between;
-
-    /* alinha no sentido contrário do flex */
     align-items: center;
-
     padding: 0 120px;
-
-    height: 10vh; /* 10% da visualização vertical do dispositivo */
+    height: 10vh;
 }
-
 .navegacao {
     display: flex;
     align-items: center;
-
     gap: 50px;
 }
-
 .navegacao a {
     text-transform: uppercase;
-    font-size: 1em; /* equivale a 16px */  
+    font-size: 1em; 
     font-weight: 500;
 }
-
-/* Conteúdo principal */
-
-/* Primeiro banner */
 .banner-principal {
     color: var(--branco);
-
     height: 70vh;
-
     background-image: url(../imgs/banner-principal-home.png);
     background-size: cover;
-
-    /* overflow: hidden;  evita que os elementos transbordem */
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 0 120px;
 }
-
 .texto-banner {
     height: 100%;
-
     display: flex;
     flex-direction: column;
-
     align-items: flex-start;
     justify-content: center;
-
     gap: 50px;
 }
-
 .texto-banner p {
     font-size: 1.5em;
     width: 60%;
 }
-
 .botao {
     padding: 20px 50px;
-
     border-radius: 10px;
-
     background-color: var(--cor-destaque);
     color: var(--azul-escuro);
-
     font-size: 1.2em;
     font-weight: 700;
-
     text-transform: uppercase;
 }
-
-.botao:hover {
-    background-color: #2ab2ab;
+.botao:hover{
+    background-color: #2ab;
     color: var(--branco);
-    /* cursor: pointer; */
+    cursor: pointer;
 }
-
 .banner-principal img {
     align-self: flex-end;
     width: 35%;
 }
-
-/* Titulo das seções */
-
-.titulo-secao {
+.titulo-secao{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-.titulo-secao h2 {
+.titulo-secao h2{
     font-size: 1.5em;
     margin-bottom: 20px;
 }
-
-.titulo-secao span {
+.titulo-secao span{
     display: flex;
     width: 250px;
-    height: 4px;
     background-color: var(--cor-destaque);
+    height: 3px;
 }
-
-/* Seção Benefícios */
-
-.beneficios {
+.beneficios{
     padding: 50px 120px;
-
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 100px;
 }
-
-.beneficios-lista {
+.beneficios-lista{
     display: grid;
-
     grid-template-columns: repeat(3, 20%);
     gap: 10%;
-
     justify-content: center;
 }
-
-.beneficio {
+.beneficio{
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
-
-    padding: 80px 20px 50px; /* em cima -> direita e esquerda -> embaixo */
-
-    border: 1px solid var(--azul-escuro);
+    padding: 80px 20px 50px;
     border-radius: 30px;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25); /* x -> y -> blur -> cor com transparência */
-
+    border: 1px solid var(--azul-escuro);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25);
     text-align: center;
-
-    /* Cria referência de posicionamento para o ícone, quando o ícone for posicionado, uas esse card como referência. */
-
-    /* sem isso, o círculo poderia usar outro elemento da página como referência e sair passeando pelo layout. */
     position: relative;
 }
-
-.beneficio-icone img {
+.beneficio-icone img{
     width: 50%;
 }
-
-.beneficio-icone {
-
+.beneficio-icone{
     border: 4px solid var(--cor-destaque);
     background-color: var(--branco);
     border-radius: 50%;
-
     width: 30%;
     height: 30%;
-
-    /* Retira o ícone do fluxo normal, com o absolute ele pode ficar por cima do card */
     position: absolute;
-
-    /* Move o círculo para cima, o valor negativo faz ele sair parcialmente do card */
     top: -15%;
-
-    /* Coloca o começo do elemento em 50% da largura do card */
     left: 50%;
-
-    /* ajustamos o posicionamento do elemento, mas a borda esquerda do círculo fica no centro, não o círculo inteiro */
-    /* por isso usamos transform: translateX(-50%); que move o próprio círculo para a esquerda em 50% da largura dele, fazendo com que o círculo fique perfeitamente centralizado. */
     transform: translateX(-50%);
-
     display: grid;
     place-items: center;
-
-    /* place-items: center; é a mesma coisa que colocar: 
-        align-itens: center e justify-items: center; */
 }
-
-.beneficio h3 {
+.beneficio h3{
     font-size: 1.2em;
     margin-bottom: 30px;
     text-transform: uppercase;
     width: 90%;
 }
-
-.beneficio p {
+.beneficio p{
     font-size: 1em;
     width: 80%;
 }
-
-/* Banner meio */
-.banner-meio {
+.banner-meio{
     height: 60vh;
     background-image: url(../imgs/Banner\ centro.svg);
     background-size: cover;
-    /* background-repeat: no-repeat; */
-
     display: flex;
     justify-content: flex-end;
-
     padding: 0 120px;
     color: var(--branco);
+    margin-bottom: 30px;
 }
-/* ==========================================================================
-   Seção de Livros Recomendados
-   ========================================================================== */
-
-.livros-recomendados {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.livros-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.livro-card {
+.livros-recomendados{
+    padding: 50px 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: space-between;
+    gap: 100px;
 }
-
-.livro-capa {
-    width: 100%;
-    max-width: 220px;
-    aspect-ratio: 2 / 3;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-/* Efeito sutil ao passar o mouse na foto do livro */
-.livro-card:hover .livro-capa {
-    transform: translateY(-5px);
-}
-
-.livro-titulo {
-    font-size: 15px;
-    font-weight: 800;
-    color: #111111;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    min-height: 44px; /* Garante alinhamento mesmo se o título quebrar linha */
-    display: flex;
-    align-items: center;
+.livros{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 5%;
     justify-content: center;
 }
-
-.autor-label {
-    font-size: 11px;
-    font-weight: bold;
-    color: #ff3333; /* Vermelho do padrão da imagem */
+.livro{
+    text-align: center;
+}
+.livro img{
+    height: 300px;
+    width: 200px;
+    margin-bottom: 15px;
+}
+.livro h3{
+    font-size: 1.2em;
+    margin-bottom: 15px;
     text-transform: uppercase;
-    margin-bottom: 4px;
+    width: 90%;
 }
-
-.autor-name {
-    font-size: 13px;
-    color: #666666;
+footer {
+    background-color: var(--azul-escuro);
+    padding: 100px 120px 30px;
+    color: var(--branco);
 }
-
-/* Responsividade */
-@media (max-width: 900px) {
-    .livros-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-}
-
-@media (max-width: 500px) {
-    .livros-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ==========================================================================
-   Footer (Rodapé)
-   ========================================================================== */
-
-.rodape {
-    background-color: #1a2332; /* Azul escuro do fundo */
-    color: #ffffff;
-    padding: 60px 20px 20px 20px;
-    font-family: Arial, sans-serif;
-}
-
-.rodape-container {
-    max-width: 1200px;
-    margin: 0 auto;
+.cima-footer {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 40px;
 }
-
-/* Área dos Logos (Esquerda) */
-.rodape-logos {
+.logos-footer {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 55px;
 }
-
-.rodape-logos img {
-    max-height: 45px;
-    object-fit: contain;
+.logos-footer img {
+    width: 125px;
+    height: auto;
 }
-
-/* Área de Conteúdo (Direita) */
-.rodape-conteudo {
-    display: flex;
-    gap: 60px;
-    flex-wrap: wrap;
+.links-footer {
+    margin-left: 1180px;
+    display: grid;
+    grid-template-columns: 140px 140px;
+    column-gap: 65px;
+    row-gap: 50px;
+    width: 350px;
 }
-
-.rodape-links {
-    display: flex;
-    gap: 60px;
-}
-
-.coluna-links {
+.nav-footer {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    width: 140px;
 }
-
-.rodape h4 {
-    color: #00b4d8; /* Cor verde/azul ciano dos títulos */
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 8px;
+.nav-footer p {
+    color: var(--cor-destaque);
+    margin: 0 0 10px;
+    font-size: 12px;
 }
-
-.coluna-links a {
-    color: #caced6;
+.nav-footer a {
+    color: var(--branco);
     text-decoration: none;
-    font-size: 14px;
-    transition: color 0.2s ease;
+    font-size: 12px;
 }
-
-.coluna-links a:hover {
-    color: #ffffff;
+.nav-footer.redes {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 140px 140px;
+    column-gap: 65px;
+    align-items: center;
+    width: 100%;
 }
-
-/* Redes Sociais */
-.rodape-redes {
+.nav-footer.redes p {
+    margin: 0;
+}
+.icones-redes-sociais {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.icones-redes {
-    display: flex;
+    align-items: center;
     gap: 20px;
 }
-
-.icones-redes img {
-    width: 24px;
-    height: 24px;
-    filter: invert(1); /* Deixa os ícones pretos em branco, se necessário */
-    transition: opacity 0.2s;
+.icones-redes-sociais img {
+    width: 22px;
+    height: 22px;
 }
-
-.icones-redes a:hover img {
-    opacity: 0.7;
+footer > span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #8a969c;
+    margin: 55px 0 30px;
 }
-
-/* Barra Inferior (Copyright e Termos) */
-.rodape-inferior {
-    margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.inferior-container {
-    max-width: 1200px;
-    margin: 0 auto;
+.ultimo {
     display: flex;
     justify-content: space-between;
-    font-size: 12px;
-    color: #8892b0;
+    align-items: center;
 }
-
-.links-legais {
+.ultimo p {
+    margin: 0;
+    font-size: 10px;
+}
+.ultimos {
     display: flex;
-    gap: 20px;
+    gap: 35px;
 }
-
-.links-legais a {
-    color: #8892b0;
+.ultimos a {
+    color: var(--branco);
     text-decoration: none;
-}
-
-.links-legais a:hover {
-    color: #ffffff;
-}
-
-/* Responsividade do Rodapé */
-@media (max-width: 768px) {
-    .rodape-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .rodape-conteudo {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .rodape-links {
-        gap: 40px;
-    }
-
-    .icones-redes {
-        justify-content: center;
-    }
-
-    .inferior-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
+    font-size: 10px;
 }
