@@ -220,3 +220,232 @@ a {
     padding: 0 120px;
     color: var(--branco);
 }
+/* ==========================================================================
+   Seção de Livros Recomendados
+   ========================================================================== */
+
+.livros-recomendados {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.livros-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.livro-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.livro-capa {
+    width: 100%;
+    max-width: 220px;
+    aspect-ratio: 2 / 3;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito sutil ao passar o mouse na foto do livro */
+.livro-card:hover .livro-capa {
+    transform: translateY(-5px);
+}
+
+.livro-titulo {
+    font-size: 15px;
+    font-weight: 800;
+    color: #111111;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    min-height: 44px; /* Garante alinhamento mesmo se o título quebrar linha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.autor-label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #ff3333; /* Vermelho do padrão da imagem */
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.autor-name {
+    font-size: 13px;
+    color: #666666;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .livros-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .livros-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   Footer (Rodapé)
+   ========================================================================== */
+
+.rodape {
+    background-color: #1a2332; /* Azul escuro do fundo */
+    color: #ffffff;
+    padding: 60px 20px 20px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.rodape-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Área dos Logos (Esquerda) */
+.rodape-logos {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.rodape-logos img {
+    max-height: 45px;
+    object-fit: contain;
+}
+
+/* Área de Conteúdo (Direita) */
+.rodape-conteudo {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.rodape-links {
+    display: flex;
+    gap: 60px;
+}
+
+.coluna-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rodape h4 {
+    color: #00b4d8; /* Cor verde/azul ciano dos títulos */
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.coluna-links a {
+    color: #caced6;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.coluna-links a:hover {
+    color: #ffffff;
+}
+
+/* Redes Sociais */
+.rodape-redes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.icones-redes {
+    display: flex;
+    gap: 20px;
+}
+
+.icones-redes img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1); /* Deixa os ícones pretos em branco, se necessário */
+    transition: opacity 0.2s;
+}
+
+.icones-redes a:hover img {
+    opacity: 0.7;
+}
+
+/* Barra Inferior (Copyright e Termos) */
+.rodape-inferior {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inferior-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #8892b0;
+}
+
+.links-legais {
+    display: flex;
+    gap: 20px;
+}
+
+.links-legais a {
+    color: #8892b0;
+    text-decoration: none;
+}
+
+.links-legais a:hover {
+    color: #ffffff;
+}
+
+/* Responsividade do Rodapé */
+@media (max-width: 768px) {
+    .rodape-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .rodape-links {
+        gap: 40px;
+    }
+
+    .icones-redes {
+        justify-content: center;
+    }
+
+    .inferior-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
